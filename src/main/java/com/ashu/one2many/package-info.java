@@ -1,5 +1,5 @@
 /**
- * Contains examples for Many to one bidirectional mapping in JPA.
+ * Contains examples for many to one bidirectional mapping in JPA.
  *
  * @author ashutoshsahoo
  *

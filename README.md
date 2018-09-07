@@ -1,2 +1,5 @@
-# spring-data-jpa-mapping
-Spring Data JPA Mapping
+# Spring Data JPA Mapping
+
+* ManyToOne 
+* OneToOne   
+* ManyToMany
