@@ -7,5 +7,5 @@ import com.ashu.one2one.model.Locker;
 
 public interface LockerRepository extends JpaRepository<Locker, Long> {
 
-    Locker findByEmployee(Employee employee);
+	Locker findByEmployee(Employee employee);
 }

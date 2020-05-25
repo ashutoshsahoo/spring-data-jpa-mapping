@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LockerDto implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private Long id;
+	private Long id;
 
-    private String lockerNo;
+	private String lockerNo;
 
-    private Long employeeId;
+	private Long employeeId;
 
 }

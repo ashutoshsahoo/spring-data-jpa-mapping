@@ -8,15 +8,15 @@ import com.ashu.one2one.model.Locker;
 
 public interface LockerService {
 
-    LockerDto create(CreateLocker createLocker);
+	LockerDto create(CreateLocker createLocker);
 
-    LockerDto viewByEmployee(Long id);
+	LockerDto viewByEmployee(Long id);
 
-    List<LockerDto> viewAll();
+	List<LockerDto> viewAll();
 
-    void delete(Long id);
+	void delete(Long id);
 
-    LockerDto update(Locker locker); // TODO
+	LockerDto update(Locker locker); // TODO
 
-    LockerDto viewById(Long id);
+	LockerDto viewById(Long id);
 }

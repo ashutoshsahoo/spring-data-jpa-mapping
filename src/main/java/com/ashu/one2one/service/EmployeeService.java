@@ -8,12 +8,12 @@ import com.ashu.one2one.model.Employee;
 
 public interface EmployeeService {
 
-    EmployeeDto viewById(Long id);
+	EmployeeDto viewById(Long id);
 
-    List<EmployeeDto> getAll();
+	List<EmployeeDto> getAll();
 
-    Employee findById(Long id);
+	Employee findById(Long id);
 
-    EmployeeDto create(CreateEmployee createEmployee);
+	EmployeeDto create(CreateEmployee createEmployee);
 
 }

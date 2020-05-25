@@ -18,35 +18,35 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(path = "/lockers", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(path = "/lockers", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor
 @Slf4j
 public class LockerController {
 
-    private final LockerService lockerService;
+	private final LockerService lockerService;
 
-    @PostMapping
-    public LockerDto create(@RequestBody CreateLocker createLocker) {
-	log.info("Create locker: {}", createLocker);
-	return lockerService.create(createLocker);
-    }
+	@PostMapping
+	public LockerDto create(@RequestBody CreateLocker createLocker) {
+		log.info("Create locker: {}", createLocker);
+		return lockerService.create(createLocker);
+	}
 
-    @GetMapping("/{id}")
-    public LockerDto viewById(@PathVariable(name = "id", required = true) Long id) {
-	log.info("View locker-ID : {}", id);
-	return lockerService.viewById(id);
-    }
+	@GetMapping("/{id}")
+	public LockerDto viewById(@PathVariable(name = "id", required = true) Long id) {
+		log.info("View locker-ID : {}", id);
+		return lockerService.viewById(id);
+	}
 
-    @GetMapping("/employee/{id}")
-    public LockerDto getLockersByEmployee(@PathVariable(name = "id", required = true) Long id) {
-	log.info("Lockers by employee - ID : {}", id);
-	return lockerService.viewByEmployee(id);
-    }
+	@GetMapping("/employee/{id}")
+	public LockerDto getLockersByEmployee(@PathVariable(name = "id", required = true) Long id) {
+		log.info("Lockers by employee - ID : {}", id);
+		return lockerService.viewByEmployee(id);
+	}
 
-    @GetMapping
-    public List<LockerDto> viewAll() {
-	log.info("All lockers");
-	return lockerService.viewAll();
-    }
+	@GetMapping
+	public List<LockerDto> viewAll() {
+		log.info("All lockers");
+		return lockerService.viewAll();
+	}
 
 }

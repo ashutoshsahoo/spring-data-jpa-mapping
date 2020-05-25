@@ -18,28 +18,28 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(path = "/users", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(path = "/users", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 @Slf4j
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserService userService;
+	private final UserService userService;
 
-    @PostMapping
-    public UserDto create(@RequestBody CreateUser createUser) {
-	log.info("Create user : {}", createUser);
-	return userService.create(createUser);
-    }
+	@PostMapping
+	public UserDto create(@RequestBody CreateUser createUser) {
+		log.info("Create user : {}", createUser);
+		return userService.create(createUser);
+	}
 
-    @GetMapping("/{id}")
-    public UserDto view(@PathVariable(name = "id", required = true) Long id) {
-	log.info("View user- ID: {}", id);
-	return userService.viewById(id);
-    }
+	@GetMapping("/{id}")
+	public UserDto view(@PathVariable(name = "id", required = true) Long id) {
+		log.info("View user- ID: {}", id);
+		return userService.viewById(id);
+	}
 
-    @GetMapping
-    public List<UserDto> getAll() {
-	log.info("All Users");
-	return userService.getAllUsers();
-    }
+	@GetMapping
+	public List<UserDto> getAll() {
+		log.info("All Users");
+		return userService.getAllUsers();
+	}
 }

@@ -21,60 +21,60 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class LockerServiceImpl implements LockerService {
 
-    private final LockerRepository lockerRepo;
+	private final LockerRepository lockerRepo;
 
-    private final EmployeeService employeeService;
+	private final EmployeeService employeeService;
 
-    @Override
-    public LockerDto create(CreateLocker createLocker) {
-	Employee employee = employeeService.findById(createLocker.getEmployeeId());
-	Locker locker = lockerRepo.save(new Locker(employee, createLocker.getLockerNo()));
-	return mapModelToDto(locker);
-    }
-
-    @Override
-    public LockerDto viewById(Long id) {
-	Locker locker = findById(id);
-	return mapModelToDto(locker);
-    }
-
-    @Override
-    public LockerDto viewByEmployee(Long id) {
-	// Employee employee = employeeService.findById(id);
-	// Locker locker = lockerRepo.findByEmployee(employee);
-	// Locker locker = findById(id);
-	// return mapModelToDto(locker);
-	// Using @MapsId, so can find locker using employee id.
-	return viewById(id);
-    }
-
-    @Override
-    public List<LockerDto> viewAll() {
-	List<Locker> lockers = lockerRepo.findAll();
-	return lockers.stream().map(this::mapModelToDto).collect(Collectors.toList());
-    }
-
-    @Override
-    public void delete(Long id) {
-	// TODO Auto-generated method stub
-    }
-
-    @Override
-    public LockerDto update(Locker locker) {
-	// TODO Auto-generated method stub
-	return null;
-    }
-
-    private Locker findById(Long id) {
-	Optional<Locker> isLocker = lockerRepo.findById(id);
-	if (!isLocker.isPresent()) {
-	    log.info("Locker not found for requested id = {}", id);
-	    throw new LockerNotFoundException(id);
+	@Override
+	public LockerDto create(CreateLocker createLocker) {
+		Employee employee = employeeService.findById(createLocker.getEmployeeId());
+		Locker locker = lockerRepo.save(new Locker(employee, createLocker.getLockerNo()));
+		return mapModelToDto(locker);
 	}
-	return isLocker.get();
-    }
 
-    private LockerDto mapModelToDto(Locker locker) {
-	return new LockerDto(locker.getId(), locker.getLockerNo(), locker.getEmployee().getId());
-    }
+	@Override
+	public LockerDto viewById(Long id) {
+		Locker locker = findById(id);
+		return mapModelToDto(locker);
+	}
+
+	@Override
+	public LockerDto viewByEmployee(Long id) {
+		// Employee employee = employeeService.findById(id);
+		// Locker locker = lockerRepo.findByEmployee(employee);
+		// Locker locker = findById(id);
+		// return mapModelToDto(locker);
+		// Using @MapsId, so can find locker using employee id.
+		return viewById(id);
+	}
+
+	@Override
+	public List<LockerDto> viewAll() {
+		List<Locker> lockers = lockerRepo.findAll();
+		return lockers.stream().map(this::mapModelToDto).collect(Collectors.toList());
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public LockerDto update(Locker locker) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Locker findById(Long id) {
+		Optional<Locker> isLocker = lockerRepo.findById(id);
+		if (!isLocker.isPresent()) {
+			log.info("Locker not found for requested id = {}", id);
+			throw new LockerNotFoundException(id);
+		}
+		return isLocker.get();
+	}
+
+	private LockerDto mapModelToDto(Locker locker) {
+		return new LockerDto(locker.getId(), locker.getLockerNo(), locker.getEmployee().getId());
+	}
 }

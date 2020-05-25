@@ -8,16 +8,16 @@ import com.ashu.one2many.model.User;
 
 public interface UserService {
 
-    UserDto create(CreateUser createUser);
+	UserDto create(CreateUser createUser);
 
-    UserDto viewById(Long id);
+	UserDto viewById(Long id);
 
-    List<UserDto> getAllUsers();
+	List<UserDto> getAllUsers();
 
-    void delete(Long id);
+	void delete(Long id);
 
-    UserDto update(User user);
+	UserDto update(User user);
 
-    User findById(Long id);
+	User findById(Long id);
 
 }

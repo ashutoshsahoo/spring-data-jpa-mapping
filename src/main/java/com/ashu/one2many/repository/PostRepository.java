@@ -9,5 +9,5 @@ import com.ashu.one2many.model.User;
 
 public interface PostRepository extends JpaRepository<Post, String> {
 
-    List<Post> findByUser(User user);
+	List<Post> findByUser(User user);
 }

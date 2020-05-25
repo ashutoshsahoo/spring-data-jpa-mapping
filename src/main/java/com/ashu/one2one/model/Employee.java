@@ -17,25 +17,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Employee implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private static final String EMP_SEQ = "EMPLOYEE_SEQUENCE";
+	private static final String EMP_SEQ = "EMPLOYEE_SEQUENCE";
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = EMP_SEQ)
-    @SequenceGenerator(name = EMP_SEQ, sequenceName = EMP_SEQ, allocationSize = 1, initialValue = 1001)
-    @Column(name = "ID")
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = EMP_SEQ)
+	@SequenceGenerator(name = EMP_SEQ, sequenceName = EMP_SEQ, allocationSize = 1, initialValue = 1001)
+	@Column(name = "ID")
+	private Long id;
 
-    private String name;
+	private String name;
 
-    // @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL, fetch =
-    // FetchType.LAZY, optional = false)
-    private Locker locker;
+	// @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL, fetch =
+	// FetchType.LAZY, optional = false)
+	private Locker locker;
 
-    public Employee(String name) {
-	super();
-	this.name = name;
-    }
+	public Employee(String name) {
+		super();
+		this.name = name;
+	}
 
 }

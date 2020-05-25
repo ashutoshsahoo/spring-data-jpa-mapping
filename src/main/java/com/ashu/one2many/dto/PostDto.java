@@ -12,14 +12,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PostDto implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private String id;
+	private String id;
 
-    private ZonedDateTime postTime;
+	private ZonedDateTime postTime;
 
-    private String message;
+	private String message;
 
-    private Long userId;
+	private Long userId;
 
 }

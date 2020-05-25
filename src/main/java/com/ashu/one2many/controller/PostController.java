@@ -18,35 +18,35 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(path = "/posts", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(path = "/posts", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor
 @Slf4j
 public class PostController {
 
-    private final PostService postService;
+	private final PostService postService;
 
-    @PostMapping
-    public PostDto create(@RequestBody CreatePost createPost) {
-	log.info("Create post: {}", createPost);
-	return postService.create(createPost);
-    }
+	@PostMapping
+	public PostDto create(@RequestBody CreatePost createPost) {
+		log.info("Create post: {}", createPost);
+		return postService.create(createPost);
+	}
 
-    @GetMapping("/{id}")
-    public PostDto viewById(@PathVariable(name = "id", required = true) String id) {
-	log.info("View post-ID : {}", id);
-	return postService.viewById(id);
-    }
+	@GetMapping("/{id}")
+	public PostDto viewById(@PathVariable(name = "id", required = true) String id) {
+		log.info("View post-ID : {}", id);
+		return postService.viewById(id);
+	}
 
-    @GetMapping("/user/{id}")
-    public List<PostDto> getPostsByUser(@PathVariable(name = "id", required = true) Long id) {
-	log.info("Posts by User - ID : {}", id);
-	return postService.viewByUser(id);
-    }
+	@GetMapping("/user/{id}")
+	public List<PostDto> getPostsByUser(@PathVariable(name = "id", required = true) Long id) {
+		log.info("Posts by User - ID : {}", id);
+		return postService.viewByUser(id);
+	}
 
-    @GetMapping
-    public List<PostDto> viewAll() {
-	log.info("All Posts ");
-	return postService.viewAll();
-    }
+	@GetMapping
+	public List<PostDto> viewAll() {
+		log.info("All Posts ");
+		return postService.viewAll();
+	}
 
 }

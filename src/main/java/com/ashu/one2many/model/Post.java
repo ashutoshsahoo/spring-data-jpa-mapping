@@ -22,30 +22,30 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Post implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "ID", unique = true, updatable = false, nullable = false)
-    private String id;
+	@Id
+	@GeneratedValue(generator = "uuid")
+	@GenericGenerator(name = "uuid", strategy = "org.hibernate.id.UUIDGenerator")
+	@Column(name = "ID", unique = true, updatable = false, nullable = false)
+	private String id;
 
-    @Column(name = "POST_TIME", nullable = false, updatable = false)
-    @CreationTimestamp
-    private ZonedDateTime postTime;
+	@Column(name = "POST_TIME", nullable = false, updatable = false)
+	@CreationTimestamp
+	private ZonedDateTime postTime;
 
-    @Column(name = "MESSAGE", nullable = false, length = 512)
-    private String message;
+	@Column(name = "MESSAGE", nullable = false, length = 512)
+	private String message;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "POST_ID")
-    // @JsonManagedReference
-    private User user;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "POST_ID")
+	// @JsonManagedReference
+	private User user;
 
-    public Post(User user, String message) {
-	super();
-	this.user = user;
-	this.message = message;
-    }
+	public Post(User user, String message) {
+		super();
+		this.user = user;
+		this.message = message;
+	}
 
 }

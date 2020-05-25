@@ -21,34 +21,34 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class User implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
-    @SequenceGenerator(name = "user_generator", sequenceName = "user_seq", allocationSize = 1, initialValue = 1001)
-    @Column(name = "ID", updatable = false, nullable = false)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
+	@SequenceGenerator(name = "user_generator", sequenceName = "user_seq", allocationSize = 1, initialValue = 1001)
+	@Column(name = "ID", updatable = false, nullable = false)
+	private Long id;
 
-    @Column(name = "NAME", length = 50, nullable = false)
-    private String name;
+	@Column(name = "NAME", length = 50, nullable = false)
+	private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
-    // @JsonBackReference
-    private Set<Post> posts = new HashSet<>();
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
+	// @JsonBackReference
+	private Set<Post> posts = new HashSet<>();
 
-    public void addPost(Post post) {
-	posts.add(post);
-	post.setUser(this);
-    }
+	public void addPost(Post post) {
+		posts.add(post);
+		post.setUser(this);
+	}
 
-    public void removePost(Post post) {
-	posts.remove(post);
-	post.setUser(null);
-    }
+	public void removePost(Post post) {
+		posts.remove(post);
+		post.setUser(null);
+	}
 
-    public User(String name) {
-	super();
-	this.name = name;
-    }
+	public User(String name) {
+		super();
+		this.name = name;
+	}
 
 }

@@ -16,21 +16,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Locker implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    private Long id;
+	@Id
+	private Long id;
 
-    private String lockerNo;
+	private String lockerNo;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    private Employee employee;
+	@OneToOne(fetch = FetchType.LAZY)
+	@MapsId
+	private Employee employee;
 
-    public Locker(Employee employee, String lockerNo) {
-	super();
-	this.employee = employee;
-	this.lockerNo = lockerNo;
-    }
+	public Locker(Employee employee, String lockerNo) {
+		super();
+		this.employee = employee;
+		this.lockerNo = lockerNo;
+	}
 
 }
