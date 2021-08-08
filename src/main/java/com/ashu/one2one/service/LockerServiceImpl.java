@@ -67,7 +67,7 @@ public class LockerServiceImpl implements LockerService {
 
 	private Locker findById(Long id) {
 		Optional<Locker> isLocker = lockerRepo.findById(id);
-		if (!isLocker.isPresent()) {
+		if (isLocker.isEmpty()) {
 			log.info("Locker not found for requested id = {}", id);
 			throw new LockerNotFoundException(id);
 		}
