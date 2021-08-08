@@ -2,4 +2,4 @@
 
 * ManyToOne 
 * OneToOne   
-* ManyToMany
+* ~~ManyToMany~~
