@@ -1,5 +1,6 @@
 package com.ashu.one2one.dto;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import lombok.AllArgsConstructor;
@@ -11,7 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class EmployeeDto implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	@Serial
+	private static final long serialVersionUID = -5710458663727220815L;
 
 	private Long id;
 

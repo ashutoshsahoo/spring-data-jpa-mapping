@@ -1,5 +1,6 @@
 package com.ashu.one2one.dto;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import lombok.AllArgsConstructor;
@@ -11,7 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateLocker implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	@Serial
+	private static final long serialVersionUID = -8458875898523895374L;
 
 	private String lockerNo;
 

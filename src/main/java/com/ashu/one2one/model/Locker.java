@@ -1,5 +1,6 @@
 package com.ashu.one2one.model;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -16,7 +17,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Locker implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	@Serial
+	private static final long serialVersionUID = 7176130763100798174L;
 
 	@Id
 	private Long id;
