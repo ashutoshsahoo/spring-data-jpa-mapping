@@ -1,51 +1,52 @@
 package com.ashu.one2many.model;
 
+import java.io.Serial;
 import java.io.Serializable;
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
 @Data
 @NoArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
 public class Post implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    @Serial
+    private static final long serialVersionUID = -657331407889087174L;
 
-	@Id
-	@GeneratedValue(generator = "uuid")
-	@GenericGenerator(name = "uuid", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(name = "ID", unique = true, updatable = false, nullable = false)
-	private String id;
+    @Id
+    @GeneratedValue
+    private UUID id;
 
-	@Column(name = "POST_TIME", nullable = false, updatable = false)
-	@CreationTimestamp
-	private ZonedDateTime postTime;
+    @Column(name = "POST_CREATE_TIME", updatable = false)
+    @CreatedDate
+    private LocalDateTime postCreateTime;
 
-	@Column(name = "MESSAGE", nullable = false, length = 512)
-	private String message;
+    @Column(name = "POST_LAST_UPDATE_TIME")
+    @LastModifiedDate
+    private LocalDateTime postLastUpdateTime;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "POST_ID")
-	// @JsonManagedReference
-	private User user;
+    @Column(name = "MESSAGE", nullable = false, length = 512)
+    private String message;
 
-	public Post(User user, String message) {
-		super();
-		this.user = user;
-		this.message = message;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    // @JsonManagedReference
+    private User user;
+
+    public Post(User user, String message) {
+        super();
+        this.user = user;
+        this.message = message;
+    }
 
 }

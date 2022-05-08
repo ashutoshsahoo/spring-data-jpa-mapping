@@ -1,7 +1,9 @@
 package com.ashu.one2many.dto;
 
+import java.io.Serial;
 import java.io.Serializable;
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,14 +14,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PostDto implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    @Serial
+    private static final long serialVersionUID = 5968418094686221081L;
 
-	private String id;
+    private UUID id;
 
-	private ZonedDateTime postTime;
+    private LocalDateTime postCreateTime;
 
-	private String message;
+    private LocalDateTime postLastUpdateTime;
 
-	private Long userId;
+    private String message;
+
+    private Long userId;
 
 }

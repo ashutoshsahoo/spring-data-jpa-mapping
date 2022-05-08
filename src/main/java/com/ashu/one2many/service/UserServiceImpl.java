@@ -1,8 +1,6 @@
 package com.ashu.one2many.service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,52 +19,47 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class UserServiceImpl implements UserService {
 
-	private final UserRepository userRepo;
+    private final UserRepository userRepo;
 
-	@Transactional
-	@Override
-	public UserDto create(CreateUser createUser) {
-		User user = userRepo.saveAndFlush(new User(createUser.getName()));
-		return mapModelToDto(user);
-	}
+    @Transactional
+    @Override
+    public UserDto create(CreateUser createUser) {
+        User user = userRepo.saveAndFlush(new User(createUser.getName()));
+        return mapModelToDto(user);
+    }
 
-	@Transactional
-	@Override
-	public UserDto viewById(Long id) {
-		User user = findById(id);
-		return mapModelToDto(user);
-	}
+    @Override
+    public UserDto viewById(Long id) {
+        User user = findById(id);
+        return mapModelToDto(user);
+    }
 
-	@Transactional
-	@Override
-	public User findById(Long id) {
-		Optional<User> user = userRepo.findById(id);
-		if (!user.isPresent()) {
-			log.info("User not found for requested id = {}", id);
-			throw new UserDoesNotExistException(id);
-		}
-		return user.get();
-	}
 
-	@Transactional
-	@Override
-	public List<UserDto> getAllUsers() {
-		return userRepo.findAll().stream().map(this::mapModelToDto).collect(Collectors.toList());
-	}
+    @Override
+    public User findById(Long id) {
+        return userRepo.findById(id).orElseThrow(() -> new UserDoesNotExistException(id));
+    }
 
-	@Override
-	public void delete(Long id) {
-		// TODO Auto-generated method stub
 
-	}
+    @Override
+    public List<UserDto> getAllUsers() {
+        return userRepo.findAll().stream().map(this::mapModelToDto).toList();
+    }
 
-	@Override
-	public UserDto update(User user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public void delete(Long id) {
+        User user = findById(id);
+        this.userRepo.delete(user);
+    }
 
-	private UserDto mapModelToDto(User user) {
-		return new UserDto(user.getId(), user.getName());
-	}
+    @Override
+    public UserDto update(Long id, User userUpdateRequest) {
+        User user = findById(id);
+        user.setName(userUpdateRequest.getName());
+        return mapModelToDto(this.userRepo.saveAndFlush(user));
+    }
+
+    private UserDto mapModelToDto(User user) {
+        return new UserDto(user.getId(), user.getName());
+    }
 }

@@ -16,7 +16,7 @@ public interface PostService {
 
     List<PostDto> viewAll();
 
-    void delete(Long id);
+    void delete(String id);
 
-    PostDto update(Post post);
+    PostDto update(String id,Post postUpdateRequest);
 }
