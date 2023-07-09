@@ -1,23 +1,23 @@
 package com.ashu.one2many.service;
 
-import java.util.List;
-
 import com.ashu.one2many.dto.CreateUser;
 import com.ashu.one2many.dto.UserDto;
 import com.ashu.one2many.model.User;
 
+import java.util.List;
+
 public interface UserService {
 
-	UserDto create(CreateUser createUser);
+    UserDto create(CreateUser createUser);
 
-	UserDto viewById(Long id);
+    UserDto viewById(Long id);
 
-	List<UserDto> getAllUsers();
+    List<UserDto> getAllUsers();
 
-	void delete(Long id);
+    void delete(Long id);
 
-	UserDto update(Long id,User user);
+    UserDto update(Long id, User user);
 
-	User findById(Long id);
+    User findById(Long id);
 
 }

@@ -1,17 +1,16 @@
 package com.ashu.one2one.service;
 
-import java.util.List;
-import org.springframework.stereotype.Service;
-
 import com.ashu.one2one.dto.CreateLocker;
 import com.ashu.one2one.dto.LockerDto;
 import com.ashu.one2one.exception.LockerNotFoundException;
 import com.ashu.one2one.model.Employee;
 import com.ashu.one2one.model.Locker;
 import com.ashu.one2one.repository.LockerRepository;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -58,7 +57,7 @@ public class LockerServiceImpl implements LockerService {
     }
 
     @Override
-    public LockerDto update(Long id,Locker locker) {
+    public LockerDto update(Long id, Locker locker) {
         Locker lockerFromRepo = findById(id);
         lockerFromRepo.setLockerNo(locker.getLockerNo());
         return mapModelToDto(this.lockerRepo.saveAndFlush(lockerFromRepo));

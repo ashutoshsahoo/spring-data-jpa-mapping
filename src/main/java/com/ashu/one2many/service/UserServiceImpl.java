@@ -1,18 +1,16 @@
 package com.ashu.one2many.service;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.ashu.one2many.dto.CreateUser;
 import com.ashu.one2many.dto.UserDto;
 import com.ashu.one2many.exception.UserDoesNotExistException;
 import com.ashu.one2many.model.User;
 import com.ashu.one2many.repository.UserRepository;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor

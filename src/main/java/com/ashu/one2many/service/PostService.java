@@ -18,5 +18,5 @@ public interface PostService {
 
     void delete(String id);
 
-    PostDto update(String id,Post postUpdateRequest);
+    PostDto update(String id, Post postUpdateRequest);
 }

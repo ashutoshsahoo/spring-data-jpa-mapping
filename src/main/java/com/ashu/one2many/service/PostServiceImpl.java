@@ -67,7 +67,7 @@ public class PostServiceImpl implements PostService {
 
     @Transactional
     @Override
-    public PostDto update(String id,Post postUpdateRequest) {
+    public PostDto update(String id, Post postUpdateRequest) {
         Post post = findById(id);
         post.setMessage(postUpdateRequest.getMessage());
         return postMapper.postToPostDto(postRepo.saveAndFlush(post));

@@ -16,7 +16,7 @@ public interface LockerService {
 
     void delete(Long id);
 
-    LockerDto update(Long id,Locker locker);
+    LockerDto update(Long id, Locker locker);
 
     LockerDto viewById(Long id);
 }

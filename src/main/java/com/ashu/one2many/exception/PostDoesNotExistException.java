@@ -8,15 +8,15 @@ import java.io.Serial;
 @ResponseStatus(code = HttpStatus.NOT_FOUND)
 public class PostDoesNotExistException extends RuntimeException {
 
-	@Serial
-	private static final long serialVersionUID = 570162136492425858L;
+    @Serial
+    private static final long serialVersionUID = 570162136492425858L;
 
-	public PostDoesNotExistException() {
-		super("Post not found");
-	}
+    public PostDoesNotExistException() {
+        super("Post not found");
+    }
 
-	public PostDoesNotExistException(String id) {
-		super("POst not found for requested id =" + id);
-	}
+    public PostDoesNotExistException(String id) {
+        super("Post not found for requested id =" + id);
+    }
 
 }
