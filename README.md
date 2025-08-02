@@ -11,6 +11,8 @@ mvn spring-boot:run
 
 ```
 
+* Open [swagger-ui](http://localhost:8080/swagger-ui/index.html) test the application.
+
 ## ManyToOne
 
 * User Table
