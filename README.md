@@ -6,8 +6,8 @@
 
 ```shell
 
-mvn clean package -DskipTests
-mvn spring-boot:run
+gradle clean build
+gradle clean bootRun
 
 ```
 
@@ -41,3 +41,7 @@ mvn spring-boot:run
 |-----------|-------------|
 | LOCK101   | 1001        |
 
+## Test
+
+Run [Postman Collection](./spring-data-jpa-mapping.postman_collection.json) to test the application. Check the test
+results for any errors.

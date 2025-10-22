@@ -1,468 +1,978 @@
 {
-  "info": {
-    "_postman_id": "063100d4-bd1e-4c73-8b5a-96cc97a35fcd",
-    "name": "spring-data-jpa-mapping",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "One2Many",
-      "item": [
-        {
-          "name": "Get All users",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"name\":\"Ashu\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "localhost:8080/api/v1/users",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "users"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Create user",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"name\":\"Ashu\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "localhost:8080/api/v1/users",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "users"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get user by Id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"name\":\"Ashu\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "localhost:8080/api/v1/users/1001",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "users",
-                "1001"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Create post",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"message\":\"Hi Ashu\",\r\n    \"userId\": \"1001\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "localhost:8080/api/v1/posts",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "posts"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get post by id",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "localhost:8080/api/v1/posts/ca8c732f-e5da-4e6b-a777-e76afe4ef785",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "posts",
-                "ca8c732f-e5da-4e6b-a777-e76afe4ef785"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get all posts",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "localhost:8080/api/v1/posts",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "posts"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get all posts for user id",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "localhost:8080/api/v1/posts/user/1001",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "posts",
-                "user",
-                "1001"
-              ]
-            }
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "name": "One2One",
-      "item": [
-        {
-          "name": "Create employee",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Ashu\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "localhost:8080/api/v1/employees",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "employees"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get all employees",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Ashu\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "localhost:8080/api/v1/employees",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "employees"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get employee by id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Ashu\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "localhost:8080/api/v1/employees/1001",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "employees",
-                "1001"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Create locker",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"lockerNo\": \"LOCK101\",\r\n    \"employeeId\": \"1001\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "localhost:8080/api/v1/lockers",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "lockers"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get locker by id",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "localhost:8080/api/v1/lockers/1001",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "lockers",
-                "1001"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get lockers",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "localhost:8080/api/v1/lockers",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "lockers"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get lockers by employee id",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "localhost:8080/api/v1/lockers/employee/1001",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "v1",
-                "lockers",
-                "employee",
-                "1001"
-              ]
-            }
-          },
-          "response": []
-        }
-      ]
-    }
-  ]
+	"info": {
+		"_postman_id": "063100d4-bd1e-4c73-8b5a-96cc97a35fcd",
+		"name": "spring-data-jpa-mapping",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11272955"
+	},
+	"item": [
+		{
+			"name": "One2Many",
+			"item": [
+				{
+					"name": "Get All users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test that response status code is 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Test that response body is an array",
+									"pm.test(\"Response body is an array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(Array.isArray(jsonData)).to.be.true;",
+									"});",
+									"",
+									"// Test that if array is not empty, each item has a 'name' property of type string",
+									"pm.test(\"Each item has a 'name' property of type string (if array is not empty)\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    if (Array.isArray(jsonData) && jsonData.length > 0) {",
+									"        jsonData.forEach(function(item, idx) {",
+									"            pm.expect(item).to.have.property('name');",
+									"            pm.expect(item.name, `Item at index ${idx} does not have a string 'name'`).to.be.a('string');",
+									"        });",
+									"    }",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Ashu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response has 'id' field\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('id');",
+									"});",
+									"",
+									"pm.test(\"Response 'name' matches sent name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.name).to.eql('Ashu');",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Ashu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test that the response status code is 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Test that the response body contains the expected user data",
+									"pm.test(\"Response body contains expected user data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property(\"id\", 1001);",
+									"    pm.expect(jsonData).to.have.property(\"name\", \"Ashu\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Ashu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/users/1001",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All users with Data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response contains at least one object with name 'Ashu'\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(Array.isArray(jsonData)).to.be.true;",
+									"    const hasAshu = jsonData.some(function(item) {",
+									"        return item && item.name === 'Ashu';",
+									"    });",
+									"    pm.expect(hasAshu).to.be.true;",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Ashu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test: Status code is 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Test: Response body contains 'id' field",
+									"pm.test(\"Response body contains 'id' field\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('id');",
+									"    pm.collectionVariables.set(\"postId\", jsonData.id);",
+									"});",
+									"",
+									"// Test: 'message' field matches sent message",
+									"pm.test(\"'message' field matches sent message\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.message).to.eql('Hi Ashu');",
+									"});",
+									"",
+									"// Test: 'userId' field matches sent userId 1001 (number or string)",
+									"pm.test(\"'userId' field matches sent userId 1001\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.userId == 1001 || jsonData.userId == '1001').to.be.true;",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\":\"Hi Ashu\",\r\n    \"userId\": \"1001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get post by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test that response status code is 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Test that Content-Type header is application/json",
+									"pm.test(\"Content-Type is application/json\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+									"});",
+									"",
+									"// Test that response body contains expected keys",
+									"pm.test(\"Response body has expected keys\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property(\"id\");",
+									"    pm.expect(jsonData).to.have.property(\"postCreateTime\");",
+									"    pm.expect(jsonData).to.have.property(\"postLastUpdateTime\");",
+									"    pm.expect(jsonData).to.have.property(\"message\");",
+									"    pm.expect(jsonData).to.have.property(\"userId\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/posts/{{postId}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"{{postId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test that response status code is 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Test that response is an array",
+									"pm.test(\"Response is an array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(Array.isArray(jsonData)).to.be.true;",
+									"});",
+									"",
+									"// Test that each item in the array has required keys",
+									"pm.test(\"Each item has required keys\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData.forEach(function(item) {",
+									"        pm.expect(item).to.have.property(\"id\");",
+									"        pm.expect(item).to.have.property(\"postCreateTime\");",
+									"        pm.expect(item).to.have.property(\"postLastUpdateTime\");",
+									"        pm.expect(item).to.have.property(\"message\");",
+									"        pm.expect(item).to.have.property(\"userId\");",
+									"    });",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all posts for user id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test that status code is 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Test that response is JSON",
+									"pm.test(\"Response is JSON\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"// Test that response body is an array",
+									"pm.test(\"Response body is an array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(Array.isArray(jsonData)).to.be.true;",
+									"});",
+									"",
+									"// Test that each object in array has required keys and userId is 1001",
+									"pm.test(\"Each post object has required keys and userId is 1001\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData.forEach(function(post) {",
+									"        pm.expect(post).to.have.property(\"id\");",
+									"        pm.expect(post).to.have.property(\"postCreateTime\");",
+									"        pm.expect(post).to.have.property(\"postLastUpdateTime\");",
+									"        pm.expect(post).to.have.property(\"message\");",
+									"        pm.expect(post).to.have.property(\"userId\");",
+									"        pm.expect(post.userId).to.eql(1001);",
+									"    });",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/posts/user/1001",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"user",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "One2One",
+			"item": [
+				{
+					"name": "Create employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response body contains expected 'id' and 'name'\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('id', 1001);",
+									"    pm.expect(jsonData).to.have.property('name', 'Ashu');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ashu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/employees",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all employees",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test that the response status code is 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Test that the response body is an array",
+									"pm.test(\"Response body is an array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(Array.isArray(jsonData)).to.be.true;",
+									"});",
+									"",
+									"// Test that the array contains at least one object with 'name' property equal to 'Ashu'",
+									"pm.test(\"Array contains at least one object with name 'Ashu'\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var found = jsonData.some(function(item) {",
+									"        return item && item.name === \"Ashu\";",
+									"    });",
+									"    pm.expect(found).to.be.true;",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ashu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/employees",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response body has id = 1001\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.id).to.eql(1001);",
+									"});",
+									"",
+									"pm.test(\"Response body has name = 'Ashu'\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.name).to.eql(\"Ashu\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ashu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/employees/1001",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create locker",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test that status code is 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Test that Content-Type is application/json",
+									"pm.test(\"Content-Type is application/json\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+									"});",
+									"",
+									"// Test that response body contains expected keys with correct types",
+									"pm.test(\"Response body has expected keys and types\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property(\"id\");",
+									"    pm.expect(jsonData).to.have.property(\"lockerNo\");",
+									"    pm.expect(jsonData).to.have.property(\"employeeId\");",
+									"    pm.expect(jsonData.id).to.be.a(\"number\");",
+									"    pm.expect(jsonData.lockerNo).to.be.a(\"string\");",
+									"    pm.expect(jsonData.employeeId).to.be.a(\"number\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lockerNo\": \"LOCK101\",\r\n    \"employeeId\": \"1001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/lockers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"lockers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get locker by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test that response status code is 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Test that Content-Type header is application/json",
+									"pm.test(\"Content-Type is application/json\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+									"});",
+									"",
+									"// Test that response body contains expected keys with correct types",
+									"pm.test(\"Response body has expected keys and types\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property(\"id\");",
+									"    pm.expect(jsonData.id).to.be.a(\"number\");",
+									"    pm.expect(jsonData).to.have.property(\"lockerNo\");",
+									"    pm.expect(jsonData.lockerNo).to.be.a(\"string\");",
+									"    pm.expect(jsonData).to.have.property(\"employeeId\");",
+									"    pm.expect(jsonData.employeeId).to.be.a(\"number\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/lockers/1001",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"lockers",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get lockers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test that status code is 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test that response is JSON\r",
+									"pm.test(\"Response is JSON\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"    pm.expect(function () { pm.response.json(); }).to.not.throw();\r",
+									"});\r",
+									"\r",
+									"// Test that response body is an array of objects with required keys\r",
+									"pm.test(\"Response body is array of objects with keys 'id', 'lockerNo', 'employeeId'\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(Array.isArray(jsonData)).to.be.true;\r",
+									"    jsonData.forEach(function(item) {\r",
+									"        pm.expect(item).to.be.an('object');\r",
+									"        pm.expect(item).to.have.property('id');\r",
+									"        pm.expect(item).to.have.property('lockerNo');\r",
+									"        pm.expect(item).to.have.property('employeeId');\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/lockers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"lockers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get lockers by employee id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test that response status code is 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Test that Content-Type header is application/json",
+									"pm.test(\"Content-Type is application/json\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+									"});",
+									"",
+									"// Test that response body contains expected keys with appropriate values",
+									"pm.test(\"Response body contains expected keys and values\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property(\"id\");",
+									"    pm.expect(jsonData).to.have.property(\"lockerNo\");",
+									"    pm.expect(jsonData).to.have.property(\"employeeId\");",
+									"    pm.expect(jsonData.id).to.eql(1001);",
+									"    pm.expect(jsonData.lockerNo).to.eql(\"LOCK101\");",
+									"    pm.expect(jsonData.employeeId).to.eql(1001);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/lockers/employee/1001",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"lockers",
+								"employee",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "postId",
+			"value": ""
+		}
+	]
 }
