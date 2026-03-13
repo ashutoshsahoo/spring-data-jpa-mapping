@@ -2,6 +2,8 @@ server:
   error:
     include-message: always
 spring:
+  application:
+    name: spring-data-jpa-mapping
   jpa:
     open-in-view: false
     generate-ddl: true
