@@ -10,7 +10,7 @@ import java.util.TimeZone;
 @EnableJpaAuditing
 public class SpringDataJpaMappingApplication {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
         SpringApplication.run(SpringDataJpaMappingApplication.class, args);
     }

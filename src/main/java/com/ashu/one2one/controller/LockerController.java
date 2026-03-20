@@ -5,7 +5,6 @@ import com.ashu.one2one.dto.LockerDto;
 import com.ashu.one2one.service.LockerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

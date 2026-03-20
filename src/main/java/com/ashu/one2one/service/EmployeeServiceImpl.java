@@ -39,7 +39,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         return mapModelToDto(employee);
     }
 
-    @Transactional
     @Override
     public Employee findById(Long id) {
         return empRepo.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
